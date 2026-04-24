@@ -19,6 +19,7 @@ public class LixoSpawnerController : MonoBehaviour
 
     {
         StartCoroutine(SpawnRoutine());
+          
     }
     IEnumerator SpawnRoutine()
     {
@@ -27,13 +28,16 @@ public class LixoSpawnerController : MonoBehaviour
             Instantiate(Lixo,
             new Vector3(Random.Range(-maximumX, maximumX + 1), fixedY, fixedZ), Quaternion.identity);
             yield return new WaitForSeconds(timer);
-        }
+        } victoryText.gameObject.SetActive(true);
+     
+        
         // Update is called once per frame
-        void Update()
+      
+    }
+      void Update()
         {
 
         }
-    }
     public void AddPoints(int value)
     {
         points += value;
